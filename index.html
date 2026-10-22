@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EEG101 Stakeholder Map</title>
+  <meta name="description" content="Organisations in the European EEG ecosystem working with EEG101 towards reproducible, standardised EEG.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Test banner: delete this block before going live on eeg101-costaction. -->
+  <div class="test-banner" role="note">
+    <strong>Test version.</strong> This stakeholder map is being tested within EEG101.
+    The entries are examples and have not been verified with the organisations.
+  </div>
+  <header class="page-header">
+    <div class="wrap">
+      <p class="eyebrow">EEG101 COST Action</p>
+      <h1>Stakeholder Map</h1>
+      <p class="lead">Organisations across Europe that can help make EEG research
+        reproducible and standardised: who they are, where they are, and what they can offer.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tiles" aria-label="Summary">
+      <div class="tile"><span class="tile-value" id="tile-total">–</span><span class="tile-label">Stakeholders</span></div>
+      <div class="tile"><span class="tile-value" id="tile-countries">–</span><span class="tile-label">Countries</span></div>
+      <div class="tile"><span class="tile-value" id="tile-partners">–</span><span class="tile-label">Confirmed partners</span></div>
+    </section>
+
+    <section class="filters" aria-label="Filters">
+      <label class="field field-search">
+        <span>Search</span>
+        <input type="search" id="f-search" placeholder="Name, city, description…">
+      </label>
+      <label class="field"><span>Type</span><select id="f-type"><option value="">All types</option></select></label>
+      <label class="field"><span>Country</span><select id="f-country"><option value="">All countries</option></select></label>
+      <label class="field"><span>Working Group</span><select id="f-wg"><option value="">All WGs</option></select></label>
+      <label class="field"><span>Can offer</span><select id="f-offer"><option value="">Anything</option></select></label>
+      <label class="check"><input type="checkbox" id="f-partner"> Partners only</label>
+      <button type="button" id="f-reset" class="button-link">Reset</button>
+    </section>
+
+    <section aria-labelledby="map-title">
+      <h2 id="map-title">Map</h2>
+      <p class="muted">Each pin is a city; the number is how many stakeholders are there. Click a pin to see them.</p>
+      <div id="map" class="map" role="region" aria-label="Map of stakeholders"></div>
+      <p class="map-legend">
+        <span class="pin pin-legend">n</span> Stakeholders
+        <span class="pin pin-legend pin-partner">n</span> Includes a confirmed partner
+        <span id="map-note" class="muted"></span>
+      </p>
+    </section>
+
+    <section aria-labelledby="stats-title">
+      <h2 id="stats-title">Overview</h2>
+      <p class="muted">Counts for the stakeholders currently shown. One organisation can offer several things and work with several WGs.</p>
+      <div class="stats">
+        <figure class="stat"><figcaption>By type</figcaption><div class="bars" id="s-type"></div></figure>
+        <figure class="stat"><figcaption>By country</figcaption><div class="bars" id="s-country"></div></figure>
+        <figure class="stat"><figcaption>By Working Group</figcaption><div class="bars" id="s-wg"></div></figure>
+        <figure class="stat"><figcaption>What they can offer</figcaption><div class="bars" id="s-offer"></div></figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="list-title">
+      <h2 id="list-title">Stakeholders</h2>
+      <p class="muted" id="count" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table class="list">
+          <thead>
+            <tr><th scope="col">Organisation</th><th scope="col">Type</th><th scope="col">Location</th><th scope="col">Can offer</th><th scope="col">WGs</th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap page-footer">
+    <p>Maintained by the EEG101 Stakeholder Mapping team. Spotted a mistake or know an organisation we should add?
+      <a href="https://www.eeg101.eu/contact/">Contact us</a>.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

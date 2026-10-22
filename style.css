@@ -1,0 +1,117 @@
+/* Colours and fonts follow www.eeg101.eu (assets/css/style.css). */
+:root {
+  --primary: #000099;
+  --gold: #ffcc00;
+  --gold-light: #fff8d6;
+  --text: #1a1a2e;
+  --muted: #5a5a7a;
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --border: #e0dbd4;
+  --bar: #3b3bd1;
+  --bar-track: #f0ede8;
+  --link: #000099;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-ui: 'Lato', system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #0d0d2b;
+    --gold-light: #3a3214;
+    --text: #ecebf5;
+    --muted: #a9a8c4;
+    --bg: #12121f;
+    --surface: #1a1a2b;
+    --border: #2f2f45;
+    --bar: #7a7aff;
+    --bar-track: #26263a;
+    --link: #a9a9ff;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+a { color: var(--link); }
+h1, h2 { font-family: var(--font-heading); line-height: 1.2; }
+h2 { font-size: 1.6rem; margin: 2.5rem 0 0.25rem; }
+.muted { color: var(--muted); margin-top: 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Test banner (remove with its block in index.html before going live) */
+.test-banner { background: var(--gold); color: #1a1a2e; text-align: center; padding: 0.5rem 16px; font-size: 0.95rem; }
+
+/* Header */
+.page-header { background: var(--primary); color: #fff; padding: 2.5rem 0 2rem; border-bottom: 4px solid var(--gold); }
+.page-header h1 { font-size: clamp(2rem, 1.6rem + 2vw, 3rem); margin: 0.2rem 0 0.5rem; }
+.eyebrow { margin: 0; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.85rem; }
+.lead { max-width: 46rem; margin: 0; opacity: 0.92; }
+
+/* Summary tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 1.5rem 0; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.tile-value { display: block; font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; line-height: 1.1; }
+.tile-label { color: var(--muted); }
+
+/* Filters: one row above everything they filter */
+.filters { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); flex: 1 1 150px; }
+.field-search { flex: 2 1 240px; }
+.field input, .field select { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.45rem 0.6rem; width: 100%; }
+.check { display: flex; align-items: center; gap: 6px; padding-bottom: 0.5rem; white-space: nowrap; }
+.button-link { font: inherit; background: none; border: 0; color: var(--link); text-decoration: underline; cursor: pointer; padding: 0 0 0.5rem; }
+
+/* Map */
+.map { height: clamp(320px, 55vh, 520px); border: 1px solid var(--border); border-radius: var(--radius); z-index: 0; }
+.map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.9rem; margin: 0.5rem 0 0; }
+.map-legend .muted { margin-left: auto; }
+.pin { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border-radius: 50%;
+  background: var(--bar); color: #fff; font: 700 0.8rem var(--font-ui); border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,100,0.35); }
+.pin-partner { background: var(--gold); color: #1a1a2e; }
+.pin-legend { display: inline-flex; width: 22px; height: 22px; font-size: 0.7rem; }
+.map-icon { background: none; border: 0; }
+/* Map popups stay light in dark mode, so they keep light-mode colours. */
+.leaflet-popup-content { font-family: var(--font-ui); margin: 10px 14px; color: #1a1a2e; }
+.leaflet-popup-content a { color: #000099; }
+.popup-place { font-weight: 700; margin-bottom: 4px; }
+.popup-list { margin: 0; padding-left: 1.1rem; }
+.popup-type { color: #5a5a7a; font-size: 0.85em; }
+
+/* Statistics: horizontal bar lists */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 12px; }
+.stat { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.stat figcaption { font-weight: 700; margin-bottom: 0.75rem; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(50px, 1fr) 1.5rem; align-items: center; gap: 8px; padding: 3px 0; font-size: 0.9rem; }
+.bar-row:hover .bar-fill { filter: brightness(1.15); }
+.bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { display: block; height: 10px; background: var(--bar-track); border-radius: 0 4px 4px 0; }
+.bar-fill { display: block; height: 100%; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+.bar-value { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+.empty { color: var(--muted); font-style: italic; }
+
+/* Table */
+.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.list { width: 100%; border-collapse: collapse; }
+.list th, .list td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.list th { font-size: 0.85rem; color: var(--muted); font-weight: 700; }
+.list tbody tr:last-child td { border-bottom: 0; }
+.org-name { font-weight: 700; }
+.org-desc { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+.tag { display: inline-block; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 999px; padding: 0 0.5rem; margin: 0 4px 4px 0; white-space: nowrap; }
+.badge { display: inline-block; font-size: 0.75rem; font-weight: 700; background: var(--gold-light); border: 1px solid var(--gold); border-radius: 999px; padding: 0 0.5rem; margin-left: 6px; vertical-align: 2px; }
+
+/* Phones: each row becomes a card */
+@media (max-width: 720px) {
+  .list thead { display: none; }
+  .list tr { display: block; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
+  .list td { display: block; padding: 2px 0; border: 0; }
+  .list td[data-label]::before { content: attr(data-label) ": "; color: var(--muted); font-size: 0.85rem; }
+}
+
+.page-footer { color: var(--muted); padding: 2rem 16px 3rem; }

@@ -1,0 +1,251 @@
+{
+  "labels": {
+    "type": {
+      "ACA": "Academic research group / lab",
+      "INF": "Research infrastructure / open-science initiative",
+      "CLI": "Clinical / hospital",
+      "IND-HW": "Industry: EEG hardware",
+      "IND-SW": "Industry: software / AI / services",
+      "SOC": "Scientific or professional society",
+      "STD": "Standards / regulatory body",
+      "FUN": "Funder / policy maker",
+      "EDU": "Training / education provider",
+      "PUB": "Patient / public organisation",
+      "PUBL": "Publisher / journal"
+    },
+    "can_offer": {
+      "data": "Data",
+      "hardware": "Hardware",
+      "software": "Software",
+      "methods-expertise": "Methods expertise",
+      "standards": "Standards",
+      "training": "Training",
+      "funding": "Funding",
+      "dissemination": "Dissemination",
+      "clinical-validation": "Clinical validation",
+      "policy-access": "Policy access",
+      "community": "Community"
+    },
+    "related_wg": {
+      "WG1": "WG1 Reporting Standards",
+      "WG2": "WG2 Curation and Harmonisation",
+      "WG3": "WG3 EEG Community Framework",
+      "WG4": "WG4 Mobile EEG Harmonisation"
+    }
+  },
+  "stakeholders": [
+    {
+      "id": "ant-neuro",
+      "name": "ANT Neuro",
+      "short_name": "ANT Neuro",
+      "type": "IND-HW",
+      "country": "NL",
+      "city": "Hengelo",
+      "website": "https://www.ant-neuro.com",
+      "description": "Manufacturer of EEG recording systems.",
+      "can_offer": [
+        "hardware",
+        "software"
+      ],
+      "related_wg": [
+        "WG1"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        52.2523,
+        6.7955
+      ]
+    },
+    {
+      "id": "biosemi",
+      "name": "BioSemi",
+      "short_name": "BioSemi",
+      "type": "IND-HW",
+      "country": "NL",
+      "city": "Amsterdam",
+      "website": "https://www.biosemi.com",
+      "description": "Manufacturer of research EEG amplifiers.",
+      "can_offer": [
+        "hardware"
+      ],
+      "related_wg": [
+        "WG1"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        52.3731,
+        4.8925
+      ]
+    },
+    {
+      "id": "brain-products-gmbh",
+      "name": "Brain Products GmbH",
+      "short_name": "Brain Products",
+      "type": "IND-HW",
+      "country": "DE",
+      "city": "Gilching",
+      "website": "https://www.brainproducts.com",
+      "description": "Manufacturer of EEG recording hardware and software.",
+      "can_offer": [
+        "hardware",
+        "software",
+        "training"
+      ],
+      "related_wg": [
+        "WG1",
+        "WG2"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        48.114,
+        11.2922
+      ]
+    },
+    {
+      "id": "bursa-technical-university",
+      "name": "Bursa Technical University",
+      "short_name": "BTU",
+      "type": "ACA",
+      "country": "TR",
+      "city": "Bursa",
+      "website": "https://www.btu.edu.tr",
+      "description": "University in Bursa.",
+      "can_offer": [
+        "methods-expertise",
+        "training"
+      ],
+      "related_wg": [
+        "WG3"
+      ],
+      "is_partner": true,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        40.1826,
+        29.0675
+      ]
+    },
+    {
+      "id": "cost-association",
+      "name": "COST Association",
+      "short_name": "COST",
+      "type": "FUN",
+      "country": "BE",
+      "city": "Brussels",
+      "website": "https://www.cost.eu",
+      "description": "Funding organisation for research and innovation networks (COST Actions).",
+      "can_offer": [
+        "funding",
+        "policy-access",
+        "community"
+      ],
+      "related_wg": [
+        "WG4"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        50.8467,
+        4.3525
+      ]
+    },
+    {
+      "id": "ebrains",
+      "name": "EBRAINS",
+      "short_name": "EBRAINS",
+      "type": "INF",
+      "country": "BE",
+      "city": "Brussels",
+      "website": "https://www.ebrains.eu",
+      "description": "European research infrastructure for brain research with data and tools.",
+      "can_offer": [
+        "data",
+        "software",
+        "standards",
+        "training"
+      ],
+      "related_wg": [
+        "WG1",
+        "WG2"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        50.8467,
+        4.3525
+      ]
+    },
+    {
+      "id": "g-tec-medical-engineering",
+      "name": "g.tec medical engineering",
+      "short_name": "g.tec",
+      "type": "IND-HW",
+      "country": "AT",
+      "city": "Schiedlberg",
+      "website": "https://www.gtec.at",
+      "description": "Manufacturer of EEG and brain-computer interface systems.",
+      "can_offer": [
+        "hardware",
+        "software",
+        "training"
+      ],
+      "related_wg": [
+        "WG1",
+        "WG2"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        48.0921,
+        14.2646
+      ]
+    },
+    {
+      "id": "international-federation-of-clinical-neurophysiology",
+      "name": "International Federation of Clinical Neurophysiology",
+      "short_name": "IFCN",
+      "type": "SOC",
+      "country": "",
+      "city": "",
+      "website": "https://www.ifcn.info",
+      "description": "International society for clinical neurophysiology.",
+      "can_offer": [
+        "standards",
+        "dissemination",
+        "community"
+      ],
+      "related_wg": [
+        "WG1",
+        "WG3"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": null
+    },
+    {
+      "id": "neuroelectrics",
+      "name": "Neuroelectrics",
+      "short_name": "Neuroelectrics",
+      "type": "IND-HW",
+      "country": "ES",
+      "city": "Barcelona",
+      "website": "https://www.neuroelectrics.com",
+      "description": "Developer of wireless EEG and brain stimulation devices.",
+      "can_offer": [
+        "hardware",
+        "clinical-validation"
+      ],
+      "related_wg": [
+        "WG1"
+      ],
+      "is_partner": false,
+      "last_reviewed": "2026-10-22",
+      "coordinates": [
+        41.3826,
+        2.1771
+      ]
+    }
+  ]
+}
