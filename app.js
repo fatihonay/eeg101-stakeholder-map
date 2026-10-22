@@ -251,7 +251,8 @@ function renderMatrix(shown) {
       const n = count(t, o);
       if (!n) return '<td><span class="cell cell-empty" aria-hidden="true"></span></td>';
       const step = ramp[Math.min(ramp.length - 1, Math.ceil((n / max) * ramp.length) - 1)];
-      const dark = ramp.indexOf(step) >= 3;
+      // White text only on the darkest step; the lighter golds need dark text.
+      const dark = ramp.indexOf(step) >= 4;
       return `<td><button class="cell" style="background:${css(step)};color:${dark ? '#fff' : css('--text')}"
         data-type="${t}" data-offer="${o}" title="${escapeHtml(label('type', t))} offering ${escapeHtml(label('can_offer', o).toLowerCase())}: ${n}">${n}</button></td>`;
     }).join('');
